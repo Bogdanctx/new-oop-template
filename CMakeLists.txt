@@ -55,7 +55,7 @@ FetchContent_MakeAvailable(sqlite3)
 
 # sqlite has to be compiled and built into a library before it is used
 add_library(sqlite3 STATIC ${sqlite3_SOURCE_DIR}/sqlite3.c)
-target_include_directories(sqlite3 PRIVATE ${sqlite3_SOURCE_DIR})
+target_include_directories(sqlite3 SYSTEM PRIVATE ${sqlite3_SOURCE_DIR})
 
 add_executable(${MAIN_EXECUTABLE_NAME}
     main.cpp
