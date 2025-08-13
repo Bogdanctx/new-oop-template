@@ -39,6 +39,7 @@ set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 #
 # FetchContent_MakeAvailable(SomeLib)
 
+# renovate: datasource=custom.sqlite-autoconf depName=sqlite
 FetchContent_Declare(
         sqlite3
         URL https://www.sqlite.org/2024/sqlite-autoconf-3470200.tar.gz
