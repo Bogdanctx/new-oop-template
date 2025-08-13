@@ -2,17 +2,11 @@
   "recreateWhen": "always",
   "enabledManagers": ["regex"],
   "baseBranches": [
+    "main",
+    "tests/gtest",
+    "baze-de-date/pqxx",
     "baze-de-date/sqlite"
   ],
-  "customDatasources": {
-    "sqlite-autoconf": {
-      "defaultRegistryUrlTemplate": "https://www.sqlite.org/download.html",
-      "format": "html",
-      "transformTemplates": [
-        "{ \"releases\": $filter(releases, function($v) { $match($v.version, '^\\d{4}/sqlite-autoconf-\\d+\\.tar\\.gz$') }) }"
-      ]
-    }
-  },
   "customManagers": [
     {
       "customType": "regex",
@@ -28,8 +22,7 @@
         "# renovate: datasource=(?<datasource>\\S+?) depName=(?<depName>\\S+?) versioning=(?<versioning>\\S+?)\\s+.*=(?<currentValue>\\S+)",
         "# renovate: datasource=(?<datasource>\\S+?) depName=(?<depName>\\S+?) versioning=(?<versioning>\\S+?)\\s+.*: \"(?<currentValue>\\S+)\"",
         "# renovate: datasource=(?<datasource>\\S+?) depName=(?<depName>\\S+?) versioning=(?<versioning>\\S+?)\\s+GIT_TAG (?<currentValue>\\S+)",
-        "<!--\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)\\s+versioning=(?<versioning>\\S+)\\s*-->\\s*-\\s*Versiunea\\s+folosită:\\s*\\[v(?<currentValue>[^\\]]+)\\]\\([^\\)]+\\)",
-        "# renovate: datasource=(?<datasource>\\S+?) depName=(?<depName>\\S+?) versioning=(?<versioning>\\S+?)\\s+FetchContent_Declare\\(\\s*sqlite3\\s*URL https:\\/\\/www\\.sqlite\\.org\\/(?<currentValue>[^\\s]+)\\s*URL_HASH SHA256=(?<currentDigest>[a-f0-9]{64})"
+        "<!--\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)\\s+versioning=(?<versioning>\\S+)\\s*-->\\s*-\\s*Versiunea\\s+folosită:\\s*\\[v(?<currentValue>[^\\]]+)\\]\\([^\\)]+\\)"
       ],
       "datasourceTemplate": "{{{datasource}}}",
       "depNameTemplate": "{{{depName}}}",
