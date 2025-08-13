@@ -163,7 +163,7 @@ jobs:
             # cmake_generator: Ninja
 
             # renovate: depName=windows
-          - os: windows-2022
+          - os: windows-2025
             c: cl
             cxx: cl
             # renovate: depName=ubuntu
@@ -176,7 +176,7 @@ jobs:
             runs_asan: true
 
             # renovate: depName=windows
-          - os: windows-2022
+          - os: windows-2025
             c: gcc
             cxx: g++
             # renovate: depName=ubuntu
