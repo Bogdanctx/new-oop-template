@@ -29,7 +29,7 @@ env:
   EXT_DIR: "ext"
   GEN_DIR: "generated"
   # renovate: datasource=github-tags depName=jtv/libpqxx versioning=loose
-  PQXX_VERSION: "7.9.2"
+  PQXX_VERSION: "7.10.1"
   DATABASE_USER: oop
   DATABASE_PASSWORD: ooppa55
   DATABASE_NAME: oop_db
