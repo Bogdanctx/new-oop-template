@@ -158,7 +158,7 @@ jobs:
             # cmake_generator: Ninja
 
             # renovate: depName=windows
-          - os: windows-2022
+          - os: windows-2025
             c: cl
             cxx: cl
             name: "ASan: Windows 2022 MSVC 19.43"
@@ -170,7 +170,7 @@ jobs:
             runs_asan: true
 
             # renovate: depName=windows
-          - os: windows-2022
+          - os: windows-2025
             c: gcc
             cxx: g++
             name: "Windows 2022 MinGW GCC 13"
