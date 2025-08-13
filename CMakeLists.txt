@@ -41,7 +41,8 @@ set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 
 FetchContent_Declare(
         sqlite3
-        URL https://www.sqlite.org/2025/sqlite-autoconf-3500400.tar.gz
+        URL https://www.sqlite.org/2024/sqlite-autoconf-3470200.tar.gz
+        URL_HASH SHA256=f1b2ee412c28d7472bc95ba996368d6f0cdcf00362affdadb27ed286c179540b
 )
 
 FetchContent_MakeAvailable(sqlite3)
@@ -55,7 +56,7 @@ FetchContent_MakeAvailable(sqlite3)
 
 # sqlite has to be compiled and built into a library before it is used
 add_library(sqlite3 STATIC ${sqlite3_SOURCE_DIR}/sqlite3.c)
-target_include_directories(sqlite3 SYSTEM PUBLIC ${sqlite3_SOURCE_DIR})
+target_include_directories(sqlite3 PUBLIC ${sqlite3_SOURCE_DIR})
 
 add_executable(${MAIN_EXECUTABLE_NAME}
     main.cpp
