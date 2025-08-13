@@ -40,7 +40,7 @@ set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 # FetchContent_MakeAvailable(SomeLib)
 
 # renovate: datasource=github-tags depName=sqlite/sqlite versioning=semver-coerced
-set(SQLITE_VERSION "3.50.4")
+set(SQLITE_VERSION "3.47.2")
 
 string(REGEX REPLACE "^([0-9]+)\\.([0-9]+)\\.([0-9]+)$" "\\1;\\2;\\3" _SQLITE_PARTS "${SQLITE_VERSION}")
 list(GET _SQLITE_PARTS 0 SQLITE_MAJOR)
