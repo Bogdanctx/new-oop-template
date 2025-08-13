@@ -29,7 +29,7 @@ env:
   EXT_DIR: "ext"
   GEN_DIR: "src/generated"
   # renovate: datasource=github-tags depName=google/googletest versioning=loose
-  GTEST_VERSION: "v1.15.2"
+  GTEST_VERSION: "v1.17.0"
 
 defaults:
   run:
