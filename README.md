@@ -20,7 +20,6 @@ O cerință nu se consideră îndeplinită dacă este realizată doar prin cod g
 - **Fără copy-paste!**
 - **Fără variabile globale!**
 - **Fără atribute publice!**
-- **Pentru T2 și T3, fără date în cod!** Datele vor fi citite din fișier, aveți exemple destule.
 
 ### Tema 0
 
@@ -131,4 +130,8 @@ conțin fișiere generate și nu ne ajută să le versionăm.
 
 ## Resurse
 
+- SQLite
+  - Site: https://www.sqlite.org/index.html
+  - Github: https://github.com/sqlite/sqlite
+  - Versiune folosită: version-3.47.2
 - adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit
