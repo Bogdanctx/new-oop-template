@@ -39,32 +39,11 @@ set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 #
 # FetchContent_MakeAvailable(SomeLib)
 
-# renovate: datasource=github-tags depName=sqlite/sqlite versioning=semver-coerced
-set(SQLITE_VERSION "3.50.4")
-
-# Ref: https://www.sqlite.org/download.html (see “Build Product Names and Info”)
-string(REGEX REPLACE "^([0-9]+)\\.([0-9]+)\\.([0-9]+)$" "\\1;\\2;\\3"
-       _SQLITE_PARTS "${SQLITE_VERSION}")
-list(GET _SQLITE_PARTS 0 SQLITE_MAJOR)
-list(GET _SQLITE_PARTS 1 SQLITE_MINOR)
-list(GET _SQLITE_PARTS 2 SQLITE_PATCH)
-
-# zero-pad MINOR/PATCH to 2 digits
-if (SQLITE_MINOR MATCHES "^[0-9]$")
-  set(SQLITE_MINOR "0${SQLITE_MINOR}")
-endif()
-if (SQLITE_PATCH MATCHES "^[0-9]$")
-  set(SQLITE_PATCH "0${SQLITE_PATCH}")
-endif()
-
-set(SQLITE_CODE "${SQLITE_MAJOR}${SQLITE_MINOR}${SQLITE_PATCH}00")
-
-string(TIMESTAMP SQLITE_YEAR "%Y")
-
+# renovate: datasource=custom.sqlite-autoconf depName=sqlite
 FetchContent_Declare(
         sqlite3
-        URL      https://www.sqlite.org/${SQLITE_YEAR}/sqlite-autoconf-${SQLITE_CODE}.tar.gz
-        # URL_HASH SHA256=f1b2ee412c28d7472bc95ba996368d6f0cdcf00362affdadb27ed286c179540b
+        URL https://www.sqlite.org/2024/sqlite-autoconf-3470200.tar.gz
+        URL_HASH SHA256=f1b2ee412c28d7472bc95ba996368d6f0cdcf00362affdadb27ed286c179540b
 )
 
 FetchContent_MakeAvailable(sqlite3)
