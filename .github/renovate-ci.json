@@ -1,25 +1,23 @@
 {
   "recreateWhen": "always",
-  "enabledManagers": ["regex"],
+  "enabledManagers": ["custom.regex"],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^\\.github/workflows/[^/]+\\.ya?ml$",
-        "^\\.github/actions/.+\\.ya?ml$"
+      "managerFilePatterns": [
+        ".github/workflows/*.yml",
+        ".github/actions/**/*.yml"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) versioning=(?<versioning>\\S+)\\s+uses:\\s*\\S+@(?<currentValue>[^\\s#]+)"
+        "# renovate: datasource=(?<datasource>\\S+?) depName=(?<depName>\\S+?)(?: versioning=(?<versioning>\\S+?))?\\s+uses:\\s*\\S*@(?<currentValue>\\S+)"
       ],
       "datasourceTemplate": "{{{datasource}}}",
       "depNameTemplate": "{{{depName}}}",
       "extractVersionTemplate": "^v?(?<version>.*)$",
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}",
-      "autoReplaceStringTemplate": "# renovate: datasource={{{datasource}}} depName={{{depName}}} versioning={{{versioning}}}\nuses: {{depName}}@v{{{newValue}}}"
+      "autoReplaceStringTemplate": "uses: {{{depName}}}@v{{{newValue}}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}"
     }
   ],
-  "branchConcurrentLimit": null,
-  "prConcurrentLimit": null,
-  "branchHourlyLimit": null,
-  "prHourlyLimit": null
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0
 }
