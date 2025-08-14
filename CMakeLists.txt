@@ -42,7 +42,7 @@ set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 FetchContent_Declare(
         sqlite3
         URL https://www.sqlite.org/2025/sqlite-autoconf-3500400.tar.gz
-        URL_HASH SHA256=330bb88febc08814d49406391891eddac59e5f812e87b83c27ab172687554375
+        URL_HASH SHA256=a3db587a1b92ee5ddac2f66b3edb41b26f9c867275782d46c3a088977d6a5b18
 )
 
 FetchContent_MakeAvailable(sqlite3)
