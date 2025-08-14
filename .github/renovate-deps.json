@@ -4,8 +4,7 @@
   "baseBranches": [
     "main",
     "tests/gtest",
-    "baze-de-date/pqxx",
-    "baze-de-date/sqlite"
+    "baze-de-date/pqxx"
   ],
   "customManagers": [
     {
